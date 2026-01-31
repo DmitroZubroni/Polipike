@@ -1,0 +1,243 @@
+// Благородные цвета
+$silver: #C0C0C0;
+$fianit: #89CFF0; // Нежный голубой
+$amethyst: #9966CC; // Благородный фиолетовый
+$ruby: #E0115F; // Рубиновый красный
+$burgundy: #800020; // Бордовый
+$emerald: #50C878; // Изумрудный
+
+:root {
+  --silver: #C0C0C0;
+  --fianit: #89CFF0;
+  --amethyst: #9966CC;
+  --ruby: #E0115F;
+  --burgundy: #800020;
+  --emerald: #50C878;
+}
+
+// Благородные градиенты
+.noble-gradient {
+  background: linear-gradient(135deg,
+          rgba(192, 192, 192, 0.1) 0%,
+          rgba(137, 207, 240, 0.2) 25%,
+          rgba(153, 102, 204, 0.2) 50%,
+          rgba(224, 17, 95, 0.1) 75%,
+          rgba(80, 200, 120, 0.1) 100%
+  );
+}
+
+// Обновлённые стили навигации
+.navbar-noble {
+  background: linear-gradient(90deg,
+          var(--silver) 0%,
+          var(--fianit) 30%,
+          var(--amethyst) 60%,
+          var(--burgundy) 100%
+  ) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid var(--emerald);
+
+  .navbar-brand {
+    color: white !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0 5px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// Благородные карточки
+.noble-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid var(--silver);
+  box-shadow:
+          0 10px 30px rgba(0, 0, 0, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg,
+            var(--fianit),
+            var(--amethyst),
+            var(--emerald)
+    );
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+// Улучшенные кнопки
+.btn-noble {
+  background: linear-gradient(45deg,
+          var(--amethyst),
+          var(--fianit)
+  );
+  border: none;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+    );
+    transition: 0.5s;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(153, 102, 204, 0.3);
+
+    &::before {
+      left: 100%;
+    }
+  }
+}
+
+.btn-hearts {
+  background: linear-gradient(45deg,
+          var(--ruby),
+          var(--burgundy)
+  ) !important;
+  font-size: 1.1rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+// Улучшенная форма пароля
+.password-sanctuary {
+  background: linear-gradient(135deg,
+          rgba(137, 207, 240, 0.1),
+          rgba(153, 102, 204, 0.1)
+  );
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--silver);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow:
+          0 20px 60px rgba(0, 0, 0, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  .form-control {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--fianit);
+    border-radius: 15px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+
+    &:focus {
+      border-color: var(--amethyst);
+      box-shadow: 0 0 0 0.3rem rgba(153, 102, 204, 0.15);
+      background: white;
+    }
+  }
+}
+
+// Стили для сердечек
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.heart-particle {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translateY(-100px) rotate(0deg) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(360deg) scale(1.5);
+  }
+}
+
+// Анимация вращения
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Анимация пульсации
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(224, 17, 95, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(224, 17, 95, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(224, 17, 95, 0.3);
+  }
+}
+
+// Анимация плавного появления
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
