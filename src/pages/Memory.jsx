@@ -70,8 +70,11 @@ const Memory = () => {
                                 }}
                             >
                                 <img
+                                    rel="preload"
                                     src={`/images/memory/${memoryPhotos[currentIndex].id}.jpg`}
                                     alt={memoryPhotos[currentIndex].title}
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-100"
                                     style={{
                                         height: '65vh',

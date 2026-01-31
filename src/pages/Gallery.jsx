@@ -70,6 +70,8 @@ const Gallery = () => {
                                     src={`/images/we/${galleryPhotos[currentIndex].id}.jpg`}
                                     alt={galleryPhotos[currentIndex].title}
                                     className="w-100"
+                                    loading="lazy"
+                                    decoding="async"
                                     style={{
                                         height: '65vh',
                                         objectFit: 'cover',

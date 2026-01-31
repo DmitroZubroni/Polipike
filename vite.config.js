@@ -3,18 +3,16 @@ import react from '@vitejs/plugin-react'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
 export default defineConfig({
-  plugins: [react(),
+  plugins: [
+    react(),
     ViteImageOptimizer({
-      /* настройки */
-      jpg: {
-        quality: 80, // качество 80% (хороший баланс)
-      },
-      png: {
-        quality: 80,
-      },
-      webp: {
-        quality: 80,
-      },
-    }),
+      jpg: { quality: 75 },
+      png: { quality: 80 },
+      webp: { quality: 75 },
+      avif: { quality: 50 },
+    })
   ],
+  build: {
+    assetsInlineLimit: 0, // ❗ не инлайнить картинки в JS
+  }
 })

@@ -96,7 +96,8 @@ const PhotosGrid = () => {
                             className="photo-item"
                             data-id={photo.id}
                         >
-                            <img src={photo.src} alt={photo.alt} />
+                            <img src={photo.src} alt={photo.alt}  loading="lazy"
+                                 decoding="async"/>
                         </div>
                     ))}
                 </div>
