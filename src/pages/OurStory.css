@@ -368,3 +368,35 @@
         margin-bottom: 2rem;
     }
 }
+
+
+@media (max-width: 600px) {
+    .story-stage {
+        height: auto;
+        min-height: 60vh;
+        padding: 1rem 0;
+    }
+
+    .story-card {
+        position: relative;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        width: 94%;
+        margin: 0 auto;
+        animation: none !important;
+    }
+
+    .offset--1,
+    .offset--2,
+    .offset-1,
+    .offset-2,
+    .hidden {
+        display: none;
+    }
+
+    .story-text {
+        font-size: 1.05rem;
+        line-height: 1.55;
+    }
+}
